@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class Parallax : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
-    float scrollSpeed = -5f;
-    Vector2 startPos;
+    public float scrollSpeed = 4f;
+    Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +13,12 @@ using UnityEngine;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float newPos = Mathf.Repeat(20, Time.time * scrollSpeed);
-        transform.position = startPos + Vector2.up * newPos;
-}*/
+        transform.Translate(translation: Vector3.down * scrollSpeed * Time.deltaTime);
+        if (transform.position.y < -20.02347f)
+        {
+            transform.position = startPos;
+        }
+    }
+}
