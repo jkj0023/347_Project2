@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public float scrollSpeed = 4f;
+    public float scrollSpeed = 2.5f;
     Vector3 startPos;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class Parallax : MonoBehaviour
     void Update()
     {
         transform.Translate(translation: Vector3.down * scrollSpeed * Time.deltaTime);
-        if (transform.position.y < -20f)
+        if (transform.position.y < -27f)
         {
             transform.position = startPos;
         }
