@@ -9,10 +9,12 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
 
     public Healthbar healthBar;
+    public PlayerMovement player;
 
     void Start()
     {
         curHealth = maxHealth;
+
     }
 
     void Update()
@@ -20,6 +22,11 @@ public class Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DamagePlayer(10);
+        }
+
+        if (curHealth <= 0)
+        {
+            GameOver();
         }
     }
 

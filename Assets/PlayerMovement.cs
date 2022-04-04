@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     private float moveX;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveX = Input.GetAxis("Horizontal") * moveSpeed;
+
     }
 
     private void FixedUpdate()
