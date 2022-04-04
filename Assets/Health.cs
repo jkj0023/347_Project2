@@ -44,26 +44,41 @@ public class Health : MonoBehaviour
 
     public void HealPlayer(int damage)
     {
-        curHealth += damage;
+        if (curHealth == 100)
+        {
+            curHealth += 0;
+        }
+        else
+        {
+            curHealth += damage;
+        }
 
         healthBar.SetHealth(curHealth);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            GameOver();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Enemy")
         {
             DamagePlayer(10);
+            print(curHealth);
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Health")
         {
             HealPlayer(10);
-        }
-
-        if (collision.gameObject.tag == "Ground")
-        {
-            GameOver();
+            print(curHealth);
+            Destroy(collision.gameObject);
         }
     }
 }
