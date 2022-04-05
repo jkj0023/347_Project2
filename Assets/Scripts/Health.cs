@@ -35,6 +35,11 @@ public class Health : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    public void Winner()
+    {
+        SceneManager.LoadScene("WinnerWinner");
+    }
+
     public void DamagePlayer(int damage)
     {
         curHealth -= damage;
@@ -62,6 +67,10 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             GameOver();
+        }
+        if (collision.gameObject.tag == "final")
+        {
+            Winner();
         }
     }
 

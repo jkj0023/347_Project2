@@ -5,12 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject platformPrefab;
+    public GameObject finalPlatform;
     public GameObject waterPrefab;
     public GameObject foodPrefab;
 
     public int platformCount = 25;
     public int waterCount = 10;
     public int foodCount = 10;
+    private int flipSign = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +21,20 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < platformCount; i++)
         {
-            spawnPosition.y += Random.Range(2f, 4f);
-            spawnPosition.x += Random.Range(-2f, 2f);
+            spawnPosition.y += Random.Range(3.5f, 4.5f);
+            spawnPosition.x += flipSign*Random.Range(4f, 6f);
             Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
-            // spawnPosition.x += 2*Random.Range(1f, 2f);
-            // Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            flipSign = -(flipSign);
         }
+        //finish line
+        spawnPosition.y += 6f;
+        Instantiate(finalPlatform, spawnPosition, Quaternion.identity);
 
         Vector3 spawnWater = new Vector3();
 
         for (int i = 0; i < waterCount; i++)
         {
-            spawnWater.y += Random.Range(10f, 15f);
+            spawnWater.y += Random.Range(7f, 10f);
             spawnWater.x += Random.Range(-2f, 2f);
             Instantiate(waterPrefab, spawnWater, Quaternion.identity);
         }
