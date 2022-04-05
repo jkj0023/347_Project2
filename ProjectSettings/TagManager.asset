@@ -8,6 +8,8 @@ TagManager:
   - Health
   - Ground
   - final
+  - V1
+  - V2
   layers:
   - Default
   - TransparentFX
