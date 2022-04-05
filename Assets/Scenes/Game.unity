@@ -634,7 +634,7 @@ MonoBehaviour:
   finalPlatform: {fileID: 148611619704237618, guid: 92a450e7314ab1e49a34daf03366ede6, type: 3}
   waterPrefab: {fileID: 7812581873350157923, guid: 9f8ac1ec5d7dfbf4183dea4cdc23675d, type: 3}
   foodPrefab: {fileID: 2927805261390788025, guid: d4174369f8132fb46990c43395f717fe, type: 3}
-  platformCount: 10
+  platformCount: 5
   waterCount: 10
   foodCount: 10
 --- !u!4 &728407757
