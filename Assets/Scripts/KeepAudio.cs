@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class KeepAudio : MonoBehaviour
 {
+    static KeepAudio instance = null;
+
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        
+        else
+        {
+            instance = this;
+            GameObject.DontDestroyOnLoad(gameObject);
+        }
+        
     }
 }

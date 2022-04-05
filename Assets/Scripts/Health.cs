@@ -89,5 +89,21 @@ public class Health : MonoBehaviour
             print(curHealth);
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Poison")
+        {
+            DamagePlayer(curHealth);
+            print(curHealth);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "GoldenHealth")
+        {
+            int newhealth = 100 - curHealth;
+            HealPlayer(newhealth);
+            print(curHealth);
+            Destroy(collision.gameObject);
+
+        }
     }
 }

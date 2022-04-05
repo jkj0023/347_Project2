@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     private float moveX;
+    public int key = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,5 +29,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = moveX;
         rb.velocity = velocity;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Key")
+        {
+            key++;
+            Destroy(col.gameObject);
+            print("Key has been obtained. Go to the finish line");
+        }
     }
 }

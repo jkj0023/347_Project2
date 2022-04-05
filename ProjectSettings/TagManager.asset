@@ -10,6 +10,9 @@ TagManager:
   - final
   - V1
   - V2
+  - Key
+  - GoldenHealth
+  - Poison
   layers:
   - Default
   - TransparentFX
