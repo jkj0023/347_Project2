@@ -13,6 +13,7 @@ TagManager:
   - Key
   - GoldenHealth
   - Poison
+  - final2
   layers:
   - Default
   - TransparentFX

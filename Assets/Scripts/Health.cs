@@ -20,11 +20,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DamagePlayer(10);
-        }
-
+        
         if (curHealth <= 0)
         {
             GameOver();
@@ -50,9 +46,9 @@ public class Health : MonoBehaviour
 
     public void HealPlayer(int damage)
     {
-        if (curHealth == 100)
+        if (curHealth >= 90)
         {
-            curHealth += 0;
+            curHealth = maxHealth;
         }
         else
         {
@@ -69,7 +65,11 @@ public class Health : MonoBehaviour
         {
             GameOver();
         }
-        if (collision.gameObject.tag == "final")
+        if ((collision.gameObject.tag == "final") && (SceneManager.GetActiveScene().name == "Game"))
+        {
+            Winner();
+        }
+        if ((collision.gameObject.tag == "final") && (key == 1) && (SceneManager.GetActiveScene().name == "NewGame"))
         {
             Winner();
         }
@@ -79,7 +79,7 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            DamagePlayer(20);
+            DamagePlayer(15);
             print(curHealth);
             Destroy(collision.gameObject);
         }
@@ -106,5 +106,12 @@ public class Health : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
+        if (collision.gameObject.tag == "Key")
+        {
+            key++;
+            Destroy(collision.gameObject);
+            print("Key has been obtained. Go to the finish line");
+        }
+
     }
 }

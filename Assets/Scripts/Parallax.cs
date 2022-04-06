@@ -16,7 +16,7 @@ public class Parallax : MonoBehaviour
     void Update()
     {
         transform.Translate(translation: Vector3.down * scrollSpeed * Time.deltaTime);
-        if (transform.position.y < -27f)
+        if (transform.position.y < -5.5f)
         {
             transform.position = startPos;
         }

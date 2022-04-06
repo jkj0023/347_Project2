@@ -9,7 +9,7 @@ public class NewHealth : MonoBehaviour
     public int maxHealth = 100;
     private int key = 0;
 
-    public Healthbar healthBar;
+    public NewHealthBar healthBar;
     public PlayerMovement player;
 
     void Start()
@@ -19,12 +19,7 @@ public class NewHealth : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DamagePlayer(10);
-        }
-
+    { 
         if (curHealth <= 0)
         {
             GameOver();
@@ -69,7 +64,7 @@ public class NewHealth : MonoBehaviour
         {
             GameOver();
         }
-        if ((collision.gameObject.tag == "final") && (key == 1))
+        if ((collision.gameObject.tag == "final2") && (key == 1))
         {
             Winner();
         }
@@ -79,7 +74,7 @@ public class NewHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            DamagePlayer(20);
+            DamagePlayer(15);
             print(curHealth);
             Destroy(collision.gameObject);
         }
