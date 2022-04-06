@@ -8,6 +8,7 @@ public class NewGameManager : MonoBehaviour
     public GameObject finalPlatform;
     public GameObject waterPrefab;
     public GameObject foodPrefab;
+    public GameObject finalKey;
 
     public int platformCount = 25;
     public int waterCount = 10;
@@ -35,6 +36,10 @@ public class NewGameManager : MonoBehaviour
             Instantiate(platformPrefab, sideQuestPos, Quaternion.identity);
             flipSign = -(flipSign);
         }
+        //make key appear
+        sideQuestPos.y += 2f;
+        Instantiate(finalKey, sideQuestPos, Quaternion.identity);
+        //top half of platforms
         for (int i = platformCount/2; i < platformCount; i++)
         {
             spawnPosition.y += Random.Range(3.5f, 4.5f);

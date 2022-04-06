@@ -31,13 +31,13 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Key")
-        {
-            key++;
-            Destroy(col.gameObject);
-            print("Key has been obtained. Go to the finish line");
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.gameObject.tag == "Key")
+    //     {
+    //         key++;
+    //         Destroy(col.gameObject);
+    //         print("Key has been obtained. Go to the finish line");
+    //     }
+    // }
 }

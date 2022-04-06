@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class NewHealth : MonoBehaviour
 {
     public int curHealth = 0;
     public int maxHealth = 100;
@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
         {
             GameOver();
         }
-        if (collision.gameObject.tag == "final")
+        if ((collision.gameObject.tag == "final") && (key == 1))
         {
             Winner();
         }
@@ -105,6 +105,13 @@ public class Health : MonoBehaviour
             print(curHealth);
             Destroy(collision.gameObject);
 
+        }
+
+        if (collision.gameObject.tag == "Key")
+        {
+            key++;
+            Destroy(collision.gameObject);
+            print("Key has been obtained. Go to the finish line");
         }
     }
 }
