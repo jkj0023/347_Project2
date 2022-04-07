@@ -7,21 +7,22 @@ public class PlayButton : MonoBehaviour
 {
     public void PlayGameOne()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Game");
     }
 
     public void PlayGameTwo()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("NewGame");
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene("Credits");
     }
 
     public void ExitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }
