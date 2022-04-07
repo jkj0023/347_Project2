@@ -2009,7 +2009,7 @@ MonoBehaviour:
   foodPrefab: {fileID: 2927805261390788025, guid: d4174369f8132fb46990c43395f717fe, type: 3}
   platformCount: 70
   waterCount: 35
-  foodCount: 21
+  foodCount: 22
 --- !u!4 &728407757
 Transform:
   m_ObjectHideFlags: 0
